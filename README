@@ -51,7 +51,7 @@ charybdis (http://www.stack.nl/~jiles/irc)	- Design Concepts
 ---------------
 
 DarkIRCd is a modular IRC daemon coded in C.  It's implemented with 
-the TS6 Protocol, it is lightweight and scaleable to handle networks of 
+the TS6 Protocol, it is lightweight and scalable to handle networks of 
 large capacitances.  
 
 ATTENTION: By using this software, you are stating that you have read 
@@ -60,7 +60,7 @@ and agreed to the terms stated in docs/LICENSE.
 3. INSTALLATION
 ----------------
 
-Just run 'perl installer.pl'
+SEE docs/INSTALL
 
 4. GETTING SUPPORT
 -------------------
