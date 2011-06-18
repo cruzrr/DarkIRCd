@@ -1,0 +1,75 @@
+  _____             _    _____ _____   _____     _ 
+ |  __ \           | |  |_   _|  __ \ / ____|   | |
+ | |  | | __ _ _ __| | __ | | | |__) | |      __| |
+ | |  | |/ _` | '__| |/ / | | |  _  /| |     / _` |
+ | |__| | (_| | |  |   < _| |_| | \ \| |____| (_| |
+ |_____/ \__,_|_|  |_|\_\_____|_|  \_\\_____|\__,_|
+                   
+                      README                                
+---------------------------------------------------
+
+TABLE OF CONTENTS
+1. Credits
+2. Description
+3. Installation
+4. Support
+5. Reporting bugs
+
+1. CREDITS
+-----------
+
+Developers:
+
+NAME			- Handle - 	- Email
+-----------------------------------------------------------
+Aaron Blakely   	Dark_Aaron      aaron@ephasic.org
+Alexandrea Wolcott	alyx		alyx@woomoo.org
+Michael Raines		OoO		michael@ephasic.org
+------------------------------------------------------------
+
+Testers:
+
+NAME			- Handle -	- Email
+------------------------------------------------------------
+Cody Mitchell		Victory		cody@ephasic.org
+------------------------------------------------------------
+
+Networks:
+
+Network Name		- Site -
+------------------------------------------------------------
+
+------------------------------------------------------------
+
+Contact aaron@ephasic.org to have your network added to this list.
+
+Other Credits:
+
+charybdis (http://www.stack.nl/~jiles/irc)	- Design Concepts
+
+2. Description
+---------------
+
+DarkIRCd is a modular IRC daemon coded in C.  It's implemented with 
+the TS6 Protocol, it is lightweight and scaleable to handle networks of 
+large capacitances.  
+
+ATTENTION: By using this software, you are stating that you have read 
+and agreed to the terms stated in docs/LICENSE.
+
+3. INSTALLATION
+----------------
+
+Just run 'perl installer.pl'
+
+4. GETTING SUPPORT
+-------------------
+
+You may get support in our IRC channel on Ephasic:
+
+irc.ephasic.org		- #DarkIRCd-Support
+
+5. REPORTING BUGS
+------------------
+
+You may report bugs to: darkircd.bugs@ephasic.org
