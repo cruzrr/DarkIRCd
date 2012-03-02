@@ -32,8 +32,11 @@ Testers:
 
 NAME			- Handle -	- Email
 -----------------------------------------------------------------
-Cody Mitchell		Victory		cody@ephasic.org
+
 -----------------------------------------------------------------
+
+Contact us on IRC or by email if intrested in becoming a tester.
+
 
 Networks:
 
@@ -46,7 +49,8 @@ Contact aaron@ephasic.org to have your network added to this list.
 
 Other Credits:
 
-charybdis (http://www.stack.nl/~jiles/irc)	- Design Concepts
+ShadowIRCd (http://shadowircd.net/)	- Design Concepts
+UnrealIRCd (www.unrealircd.com/)	- Design Concepts
 
 2. Description
 ---------------
