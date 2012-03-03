@@ -3,7 +3,7 @@ LINKER=ld
 OBJECTS=build/objects/*.o
 SORUCES=src/server.c src/main.c
 EXECUTABLE=build/darkircd
-IDIR=src/includes
+IDIR=lib/
 OBJDIR=build/objects
 SAY=echo
 
