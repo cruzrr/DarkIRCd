@@ -3,14 +3,9 @@
 #include <stdlib.h>
 
 #include "server.h"
+#include "parser.h"
 
-typedef struct _s {
-    char *command;
-    char *prefix;
-    char *postfix;
-} event;
-
-event parse(char *str)
+ircClientRaw parse(char *str)
 {
     char *save = str;
     int i,j = 0;
