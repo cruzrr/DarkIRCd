@@ -35,6 +35,9 @@ ircClientRaw parse(char *str)
         return ret;
     }
     ret.prefix = strndup(save, i);
+    char *tmp = ret.prefix;
+    for(i = 0; *tmp != '\0'; *tmp++ ) if(*tmp == ' ') i++;
+    ret.arg_count = i + 1;
     *str++;
     ret.postfix = str;
     return ret;
