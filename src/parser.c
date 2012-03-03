@@ -9,7 +9,8 @@ ircClientRaw parse(char *str)
 {
     char *save = str;
     int i,j = 0;
-    event ret;
+    ircClientRaw ret;
+
     for(i = 0;(*str != ' ') && (*str != '\0'); *str++) i++;
     ret.command = strndup(save, i);
     if(*str == '\0')
