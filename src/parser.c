@@ -5,7 +5,7 @@
 #include "server.h"
 #include "parser.h"
 
-ircClientRaw parse(char *str)
+ircClientRaw client_parse(char *str)
 {
     char *save = str;
     int i,j = 0;
