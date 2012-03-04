@@ -14,7 +14,7 @@ __Table Of Contents__
 <li><strong><a href="#description">Description</a></strong></li>
 <li><strong><a href="#installation">Installation</a></strong></li>
 <li><strong><a href="#support">Support</a></strong></li>
-<li><strong><a href="#report_bugs">Reporting bugs</a><strong></li>
+<li><strong><a href="#bugs">Reporting bugs</a><strong></li>
 </ol>
 
 <a name="credits"></a>***Credits***
@@ -25,10 +25,10 @@ __Developers:__
 <blockquote>
  <table>
  <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
- <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td>aaron@ephasic.org</td></tr>
- <tr><td>Matthew Barksdale</td><td>matthew</td><td>matthew@alphachat.new</td></tr>
- <tr><td>Matthew Carey</td><td>swarley</td><td>matthew.b.carey@gmail.com</td></tr>
- <tr><td>Michael Raines</td><td>OoO</td><td>mikeyr71730@gmail.com</td></tr>
+ <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td><a href="mailto:aaron@ephasic.org">aaron@ephasic.org</a></td></tr>
+ <tr><td>Matthew Barksdale</td><td>matthew</td><td><a href="mailto:matthew@alphachat.new">matthew@alphachat.new</a></td></tr>
+ <tr><td>Matthew Carey</td><td>swarley</td><td><a href="mailto:matthew.b.carey@gmail.com">matthew.b.carey@gmail.com</a></td></tr>
+ <tr><td>Michael Raines</td><td>OoO</td><td><a href="mikeyr71730@gmail.com">mikeyr71730@gmail.com</a></td></tr>
  </table>
 </blockquote>
 
@@ -57,13 +57,11 @@ Contact aaron@ephasic.org to have your network added to this list.
 
 __Other Credits:__
 
-<blockquote>
-  <table>
-   <tr><td>Name</td><td>Reason</td></tr>
-   <tr><td><a href="http://shadowircd.net/">ShadowIRCd</a></td><td>Design Concepts</td></tr>
-   <tr><td><a href="http://unrealircd.com/">UnrealIRCd</a></td><td>Design Concepts</td></tr>
-  <table>
-</blockquote>
+
+>  [ShadowIRCd](http://shadowircd.net/ "ShadowIRCd") - Design Concepts
+>
+>  [UnrealIRCd](http://unrealircd.com/ "UnrealIRCd")  - Design Concepts
+
 
 <a name="description"></a>***Description***
 -----------------------------------------------------------------
@@ -75,19 +73,19 @@ large capacitances.
 ATTENTION: By using this software, you are stating that you have read 
 and agreed to the terms stated in docs/LICENSE.
 
-3. INSTALLATION
-----------------
+<a name="installation"></a>***Installation***
+-----------------------------------------------------------------
 
-SEE docs/INSTALL
+See [docs/INSTALL](https://github.com/cruzrr/DarkIRCd/blob/master/doc/INSTALL "docs/INSTALL")
 
-4. GETTING SUPPORT
--------------------
+<a name="support"></a>***Getting Support***
+-----------------------------------------------------------------
 
 You may get support in our IRC channel on Ephasic:
 
-irc.alphachat.net       - #DarkIRCd
+`irc.alphachat.net  -  #DarkIRCd`
 
-5. REPORTING BUGS
-------------------
+<a name="bugs"></a>***Reporting Bugs***
+-----------------------------------------------------------------
 
 You may report bugs to: darkircd.bugs@ephasic.org
