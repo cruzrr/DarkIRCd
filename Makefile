@@ -21,4 +21,3 @@ clean:
 	@rm -rf build/
 	@$(SAY) "Done."
 
-uninstall: clean
