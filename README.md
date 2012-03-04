@@ -10,52 +10,63 @@
 
 __Table Of Contents__
 <ol>
-<li><strong>Credits</strong></li>
-<li><strong>Description</strong></li>
-<li><strong>Installation</strong></li>
-<li><strong>Support</strong></li>
-<li><strong>Reporting bugs<strong></li>
+<li><strong><a href="#credits">Credits</a></strong></li>
+<li><strong><a href="#description">Description</a></strong></li>
+<li><strong><a href="#installation">Installation</a></strong></li>
+<li><strong><a href="#support">Support</a></strong></li>
+<li><strong><a href="#report_bugs">Reporting bugs</a><strong></li>
 </ol>
 
-***Credits***
+<a name="credits"></a>***Credits***
 ----------------------------------------------------------------
 
 __Developers:__
 
-> <table>
-> <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
-> <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td>aaron@ephasic.org</td></tr>
-> <tr><td>Matthew Barksdale</td><td>matthew</td><td>matthew@alphachat.new</td></tr>
-> <tr><td>Matthew Carey</td><td>swarley</td><td>matthew.b.carey@gmail.com</td></tr>
-> <tr><td>Michael Raines</td><td>OoO</td><td>mikeyr71730@gmail.com</td></tr>
-> </table>
+<blockquote>
+ <table>
+ <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
+ <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td>aaron@ephasic.org</td></tr>
+ <tr><td>Matthew Barksdale</td><td>matthew</td><td>matthew@alphachat.new</td></tr>
+ <tr><td>Matthew Carey</td><td>swarley</td><td>matthew.b.carey@gmail.com</td></tr>
+ <tr><td>Michael Raines</td><td>OoO</td><td>mikeyr71730@gmail.com</td></tr>
+ </table>
+</blockquote>
 
 __Testers:__
+<blockquote>
+ <table>
+ <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
+ <tr><td> - </td><td> - </td><td> - </td></tr>
+ </table>
+</blockquote>
 
-> <table>
-> <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
-> <tr><td> - </td><td> - </td><td> - </td></tr>
-> </table>
-
-Contact us on IRC or by email if intrested in becoming a tester.
+_Contact us on IRC or by email if intrested in becoming a tester._
 
 
-Networks:
+__Networks:__
 
-Network Name        - Site -
-----------------------------------------------------------------
-
-----------------------------------------------------------------
+<blockquote>
+ <table>
+  <tr><td>Network Name</td><td>Site</td></tr>
+  <tr><td> - </td><td> - </td></tr>
+ </table>
+</blockquote>
 
 Contact aaron@ephasic.org to have your network added to this list.
 
-Other Credits:
 
-ShadowIRCd (http://shadowircd.net/) - Design Concepts
-UnrealIRCd (www.unrealircd.com/)    - Design Concepts
+__Other Credits:__
 
-2. Description
----------------
+<blockquote>
+  <table>
+   <tr><td>Name</td><td>Reason</td></tr>
+   <tr><td><a href="http://shadowircd.net/">ShadowIRCd</a></td><td>Design Concepts</td></tr>
+   <tr><td><a href="http://unrealircd.com/">UnrealIRCd</a></td><td>Design Concepts</td></tr>
+  <table>
+</blockquote>
+
+<a name="description"></a>***Description***
+-----------------------------------------------------------------
 
 DarkIRCd is a modular IRC daemon coded in C.  It's implemented with 
 the TS6 Protocol, it is lightweight and scalable to handle networks of 
