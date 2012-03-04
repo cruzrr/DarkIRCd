@@ -27,7 +27,7 @@ int hashstring(const char* s) {
 
 
 int hash_fun(int key, int try) {
-    return (key + try) % 1024;
+    return ((key + try) % 1024);
 }
 
 int hash_insert(struct hashRow *data, struct hashTable *hash_table) {
@@ -94,7 +94,7 @@ void insertsomething()
     toInsert = (struct hashRow *)malloc(sizeof(*toInsert));
 
     printf("toInsert declared\n");
-
+    
 /*
     char *k = (char*)malloc(sizeof(char*)); // wrong size
     char *v = (char*)malloc(sizeof(char*)); // wrong size
