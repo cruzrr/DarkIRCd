@@ -22,6 +22,14 @@ struct callbackList
 
 };
 
+int hashTable_insert(struct hashRow *data, struct event_hashTable *hash_table);
+struct hashRow *hash_get(int key, struct event_hashTable *hash_table);
+int hash_delete(int key, struct event_hashTable *hash_table);
+int init_events();
+
+struct eventsTable *events;
+
+
 /* define each event's numer here */
 
 #define IRC_CLIENT_CONNECT 1

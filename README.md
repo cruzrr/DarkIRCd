@@ -35,8 +35,8 @@ __Developers:__
 __Testers:__
 <blockquote>
  <table>
- <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
- <tr><td> - </td><td> - </td><td> - </td></tr>
+ <tr><td>Handle</td></tr>
+ <tr><td>Hackintech</td></tr>
  </table>
 </blockquote>
 

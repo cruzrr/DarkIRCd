@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
+
 #include "event.h"
 #include "hash.h"
 
@@ -59,4 +63,23 @@ int hash_delete(int key, struct event_hashTable *hash_table)
 		}
 	}
 	return 0;
+}
+
+void registerHook(int key, void (*callback)(void *))
+{
+	if (!events)
+	{
+		perror("hash table hasn't init'd.");
+		exit(1);
+	}
+
+	struct hashRow *toInsert;
+	hashRow.key =  key;
+	hashRow.cb  =  callback;
+}
+
+
+int init_events()
+{
+	events = NULL;
 }
