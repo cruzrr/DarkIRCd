@@ -1,40 +1,41 @@
-###  _____             _    _____ _____   _____     _ 
-### |  __ \           | |  |_   _|  __ \ / ____|   | |
-### | |  | | __ _ _ __| | __ | | | |__) | |      __| |
-### | |  | |/ _` | '__| |/ / | | |  _  /| |     / _` |
-### | |__| | (_| | |  |   < _| |_| | \ \| |____| (_| |
-### |_____/ \__,_|_|  |_|\_\_____|_|  \_\\_____|\__,_|
+      _____             _    _____ _____   _____     _ 
+     |  __ \           | |  |_   _|  __ \ / ____|   | |
+     | |  | | __ _ _ __| | __ | | | |__) | |      __| |
+     | |  | |/ _` | '__| |/ / | | |  _  /| |     / _` |
+     | |__| | (_| | |  |   < _| |_| | \ \| |____| (_| |
+     |_____/ \__,_|_|  |_|\_\_____|_|  \_\\_____|\__,_|
                    
-<h1 style="text-align:center;">README</h1>
----------------------------------------------------
+<h2 style="text-align:center;">README</h1>
+
 
 __Table Of Contents__
-1. Credits
-2. Description
-3. Installation
-4. Support
-5. Reporting bugs
+<ol>
+<li><strong>Credits</strong></li>
+<li><strong>Description</strong></li>
+<li><strong>Installation</strong></li>
+<li><strong>Support</strong></li>
+<li><strong>Reporting bugs<strong></li>
+</ol>
 
-1. CREDITS
------------
+***Credits***
+----------------------------------------------------------------
 
-Developers:
+__Developers:__
 
-<table>
-<tr><td>NAME</td><td>Handle</td><td>Email</td></tr>
-<tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td>aaron@ephasic.org</td></tr>
-<tr><td>Matthew Barksdale</td><td>matthew</td><td>matthew@alphachat.new</td></tr>
-<tr><td>Matthew Carey</td><td>swarley</td><td>matthew.b.carey@gmail.com</td></tr>
-<tr><td>Michael Raines</td><td>OoO</td><td>mikeyr71730@gmail.com</td></tr>
-</table>
------------------------------------------------------------------
+> <table>
+> <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
+> <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td>aaron@ephasic.org</td></tr>
+> <tr><td>Matthew Barksdale</td><td>matthew</td><td>matthew@alphachat.new</td></tr>
+> <tr><td>Matthew Carey</td><td>swarley</td><td>matthew.b.carey@gmail.com</td></tr>
+> <tr><td>Michael Raines</td><td>OoO</td><td>mikeyr71730@gmail.com</td></tr>
+> </table>
 
-Testers:
+__Testers:__
 
-NAME            - Handle -  - Email
------------------------------------------------------------------
-
------------------------------------------------------------------
+> <table>
+> <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
+> <tr><td> - </td><td> - </td><td> - </td></tr>
+> </table>
 
 Contact us on IRC or by email if intrested in becoming a tester.
 
