@@ -42,3 +42,20 @@ ircClientRaw client_parse(char *str)
     ret.postfix = str;
     return ret;
 }
+
+ircServerRaw server_parse(char *str)
+{
+    ircServerRaw ret;
+    int i;
+    int j;
+    char *save = str;
+    for(i=0; *str != ' '; *str++) i++;
+    ret.sid = strndup(save, i);
+    *str++;
+    save = str;
+    for(j=0; *str != ' '; *str++) j++;
+    ret.command = strndup(save, j);
+    *str++;
+    ret.args = str;
+    return ret;
+}

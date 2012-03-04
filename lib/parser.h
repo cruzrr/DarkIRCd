@@ -9,12 +9,10 @@ typedef struct _c
 	int arg_count;
 } ircClientRaw;
 
-typedef struct _s
-{
-	char *command;
-	char *prefix;
-	char *postfix;
-	int arg_count;
+typedef struct _s {
+    char *sid;
+    char *command;
+    char *args;
 } ircServerRaw;
 
 #endif
