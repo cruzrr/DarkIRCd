@@ -1,1 +1,1 @@
-gcc -Ilib/ src/hash.c -o hash
+gcc -g -Ilib/ src/hash.c src/hashtest.c -o hash

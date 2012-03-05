@@ -1,16 +1,19 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include "hash.h"
 
 int main()
 {
 	struct hashTable *table;
-	table = (struct hashTable *)malloc(sizeof(*table));
+	table->max = 5000;
+
+	hash_alloc(table, 5000);
 
 	struct hashBucket *test;
-	test->key = "test";
-	test->value = "win";
+	test->key = strdup("test");
+	test->value = strdup("win");
 
 	hash_store(test, table);
 	test = 0;
