@@ -9,7 +9,7 @@ int hash_string(const char *key)
 	while (*key)
 		hkey = hkey * 37 + *key++;
 
-	return hkey;
+	return hkey / 2;
 }
 
 void init_hash(struct hashTable *t)
@@ -30,9 +30,14 @@ int hash_store(struct hashBucket *data, struct hashTable *store)
 	for (try = 0; 1; try++)
 	{
 		hkey = hash_string(data->key);
-		store->buckets[hkey] = malloc(sizeof(struct hashBucket *));
-		store->buckets[hkey] = data;
-		store->size++;
+		store->buckets[hkey] = (struct hashBucket *)malloc(sizeof(struct hashBucket *));
+
+		if (store->buckets[hkey] == NULL)
+		{
+			store->buckets[hkey] = data;
+			store->size++;
+			return 1;
+		}
 	}
 	return 0;
 }
