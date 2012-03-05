@@ -1,4 +1,6 @@
 #include <string.h>
+#include <stdlib.h>
+
 #include "hash.h"
 
 int hash_string(const char *key)
@@ -10,10 +12,11 @@ int hash_string(const char *key)
 	return hkey;
 }
 
-void hash_alloc(struct hashTable *table, int size)
+void init_hash(struct hashTable *t)
 {
-	memset(&table, '\0', size);
+	*t->buckets = malloc(sizeof(struct hashBucket *));
 }
+
 
 int hash_store(struct hashBucket *data, struct hashTable *store)
 {
@@ -27,12 +30,9 @@ int hash_store(struct hashBucket *data, struct hashTable *store)
 	for (try = 0; 1; try++)
 	{
 		hkey = hash_string(data->key);
-		if (!store->buckets[hkey])
-		{
-			store->buckets[hkey] = data;
-			store->size++;
-			return 1;
-		}
+		store->buckets[hkey] = malloc(sizeof(struct hashBucket *));
+		store->buckets[hkey] = data;
+		store->size++;
 	}
 	return 0;
 }
@@ -43,7 +43,7 @@ struct hashBucket *hash_retrieve(const char *key, struct hashTable *store)
 	for (try = 0; 1; try++)
 	{
 		hkey = hash_string(key);
-		if (!store->buckets[hkey])
+		if (store->buckets[hkey] == NULL)
 			return 0;
 
 		if (strcmp(store->buckets[hkey]->key, key))
@@ -58,7 +58,7 @@ int hash_remove(const char *key, struct hashTable *store)
 	for (try = 0; 1; try++)
 	{
 		hkey = hash_string(key);
-		if (!store->buckets[hkey])
+		if (store->buckets[hkey] == NULL)
 			return 0;
 
 		if (strcmp(store->buckets[hkey]->key, key))
