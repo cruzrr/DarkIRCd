@@ -81,7 +81,7 @@ See [docs/INSTALL](https://github.com/cruzrr/DarkIRCd/blob/master/doc/INSTALL "d
 <a name="support"></a>***Getting Support***
 -----------------------------------------------------------------
 
-You may get support in our IRC channel on Ephasic:
+You may get support in our IRC channel on AlphaChat:
 
 `irc.alphachat.net  -  #DarkIRCd`
 
