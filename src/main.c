@@ -10,12 +10,10 @@
 #include <stdarg.h>
 
 #include "server.h"
-#include "hash.h"
 
 int main(int argc, char *argv[])
 {
 	init_server(6667);
-	init_events();
 
 	for(;;)
 	{
