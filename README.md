@@ -27,7 +27,7 @@ __Developers:__
  <tr><td>Name</td><td>Handle</td><td>Email</td></tr>
  <tr><td>Aaron Blakely</td><td>Dark_Aaron</td><td><a href="mailto:aaron@ephasic.org">aaron@ephasic.org</a></td></tr>
  <tr><td>Alyx</td><td>Alyx</td><td><a href="mailto:REMOVETHISalyx@malkier.net">alyx - at - malkier.net</a></td></tr>
- <tr><td>Matthew Barksdale</td><td>matthew</td><td><a href="mailto:matthew@alphachat.new">matthew@alphachat.new</a></td></tr>
+ <tr><td>Matthew Barksdale</td><td>matthew</td><td><a href="mailto:matthew@alphachat.new">matthew@alphachat.net</a></td></tr>
  <tr><td>Matthew Carey</td><td>swarley</td><td><a href="mailto:matthew.b.carey@gmail.com">matthew.b.carey@gmail.com</a></td></tr>
  <tr><td>Michael Raines</td><td>OoO</td><td><a href="mikeyr71730@gmail.com">mikeyr71730@gmail.com</a></td></tr>
  </table>
