@@ -9,10 +9,15 @@
 
 #include "server.h"
 #include "error.h"
+/* Feel free to remove static if other files need access to the listener fd. */
+static int listener, fdmax;
+static fd_set master, read_fds;
 
 int init_server(int port)
 {
 	int yes = 1;
+    struct sockaddr_in serveraddr;
+
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
 
@@ -41,7 +46,12 @@ int init_server(int port)
 
 void process_connections()
 {
-	read_fds = master;
+    int i, j, nbytes, addrlen, newfd;
+    char buf[1024];
+    struct sockaddr_in clientaddr;
+
+    read_fds = master;
+
 	if (select(fdmax+1, &read_fds, NULL, NULL, NULL) == -1)
 		darkircd_error(1, "failed to use select on undefined socket.");
 
