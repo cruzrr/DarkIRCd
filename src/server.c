@@ -11,7 +11,7 @@
 
 int init_server(int port)
 {
-
+	int yes = 1;
 	FD_ZERO(&master);
 	FD_ZERO(&read_fds);
 
