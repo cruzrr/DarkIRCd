@@ -7,6 +7,8 @@ typedef struct client {
 	char *host;
 	char *username;
 	char *realname;
+	char **modes[];
+	int modecount;
 	int lastpong;
 } client;
 
