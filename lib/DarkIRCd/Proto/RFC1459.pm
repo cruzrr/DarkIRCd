@@ -32,7 +32,7 @@ sub new {
 
 sub proto_def {
 	my $class = shift;
-	my $proto = (
+	my %proto = (
 		WELCOME     => '001',
 		SERV_HOST   => '002',
 		SERV_CRET   => '003',
@@ -76,12 +76,12 @@ sub proto_def {
 		TIME        => '391'
 	);
 
-	return $proto;
+	return \%proto;
 }
 
 sub error_def {
 	my $class = shift;
-	my $errors = (
+	my %errors = (
 		NOSUCHNICK  => '401',
 		NOSUCHSERV  => '402',
 		CANNOTSEND  => '404',
@@ -109,7 +109,7 @@ sub error_def {
 		UNLIKEUSER  => '502'
 	);
 
-	return $errors;
+	return \%errors;
 }
 
 sub checknick {
