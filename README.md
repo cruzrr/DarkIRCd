@@ -67,7 +67,7 @@ __Other Credits:__
 <a name="description"></a>***Description***
 -----------------------------------------------------------------
 
-DarkIRCd is a modular IRC daemon coded in C.  It's implemented with 
+DarkIRCd is a modular IRC daemon coded in Perl.  It's implemented with 
 the TS6 Protocol, it is lightweight and scalable to handle networks of 
 large capacitances.  
 
