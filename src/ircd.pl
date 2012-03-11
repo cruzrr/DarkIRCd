@@ -1,4 +1,4 @@
-#!/usr/bin/perl -w
+#!/usr/bin/perl
 
 # DarkIRCd - Modular and Lightweight IRCd in Perl.
 #
@@ -7,5 +7,7 @@
 
 use strict;
 use warnings;
+use lib '../lib';
+use DarkIRCd::Server;
 
 # erm, well... nothing to do yet. :P
