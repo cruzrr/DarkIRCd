@@ -1,6 +1,6 @@
-package DarkIRCd::Config;
+package DarkIRCd::Core;
 
-# This module contains the configuration file parsing mechanism.
+# This is the Core module of DarkIRCd.
 #
 #
 # Copyright (C) 2012 cruzrr
@@ -22,37 +22,17 @@ package DarkIRCd::Config;
 
 use strict;
 use warnings;
+use DarkIRCd::Config;
 
-our $configFile;
+our $config;
 
 sub new {
-    my ($class, $confFile) = @_;
-    my $self    = { };
-    
-    $configFile = $confFile;
+    my ($class, $configFile) = @_;
+    my $config_parser        = DarkIRCd::Config->new($configFile);
+    $config               = $config_parser-parse();
+    my $self                 = { };
     
     return bless($self, $class);
-}
-
-sub parse {
-    my ($class) = @_;
-    
-    my ($fh, $section, %config);
-    open($fh, "<$configFile") or die("Couldn't open config: $!\n");
-    while (<$fh>) {
-        if (/\#(.*)/) {
-            next;
-        } elsif (/\s*\[\s*(.*)\s*\]\s*/) {
-            $section = $1;
-            next;
-        } elsif (/\s*(\w+)\s*\=\s*(.*)\s*/) {
-            $config{$section}->{$1} = $2;
-            next;
-        }
-   }
-   
-   close($fh);
-   return \%config;
 }
 
 1;
