@@ -22,6 +22,11 @@ package DarkIRCd::Sockets::IPv4;
 
 use strict;
 use warnings;
+use IO::Socket::INET;
+use IO::Socket::SSL;
+use IO::Select;
+
+our $server;
 
 sub new {
 	my ($class) = @_;
@@ -29,5 +34,33 @@ sub new {
 	
 	return bless($self, $class);
 }
+
+sub createServer {
+	my ($class, %config, $certfile, $keyfile, $addr, $port) = @_;
+	
+	if ($config->{Server}->{SSL} == 1) {
+		$server = new IO::Socket::SSL(
+			SSL_server		=> 1,
+			SSL_cert_file	=> $certfile,
+			SSL_key_file	=> $keyfile,
+			LocalPort		=> $port,
+			LocalAddr		=> $addr || 'localhost',
+			Proto			=> 'tcp',
+			ReuseAddr		=> 1,
+			Type			=> Socket::SOCK_STREAM
+		);
+	} else {
+		$server = new IO::Socket::INET(
+			LocalPort		=> $port,
+			LoacalAddr		=> $addr || 'localhost',
+			Proto			=> 'tcp',
+			ReuseAddr		=> 1,
+			Type			=> Socket::SOCK_STREAM
+		);
+	}
+	
+	return \$server;
+}
+		
 
 1;
