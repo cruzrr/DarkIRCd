@@ -24,9 +24,8 @@ use strict;
 use warnings;
 use IO::Socket::INET;
 use IO::Socket::SSL;
-use IO::Select;
 
-our $server;
+our ($server);
 
 sub new {
 	my ($class) = @_;
@@ -36,7 +35,7 @@ sub new {
 }
 
 sub createServer {
-	my ($class, $certfile, $keyfile, $addr, $port, $useSSL) = @_;
+	my ($class, $addr, $port, $useSSL, $certfile, $keyfile) = @_;
 	
 	if ($useSSL == 1) {
 		$server = IO::Socket::SSL->new(

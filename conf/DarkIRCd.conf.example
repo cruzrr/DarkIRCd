@@ -2,3 +2,7 @@
 # DarkIRCd Configuration File
 #
 
+[Server]
+
+bindaddr = localhost
+ports = 6667:IPV4+IPV6+NOSSL,6697:IPV4+IPV6+SSL

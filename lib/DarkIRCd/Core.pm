@@ -24,13 +24,51 @@ use strict;
 use warnings;
 use DarkIRCd::Config;
 
-our $config;
+our ($sel, $config);
 
 sub new {
     my ($class, $configFile) = @_;
     my $config_parser        = DarkIRCd::Config->new($configFile);
-    $config               = $config_parser-parse();
     my $self                 = { };
+    $sel                     = IO::Select->new();
+    $config                  = $config_parser-parse();
+    
+    my @ports = split(',', $config->{Server}->{ports});
+    
+    foreach my $portlist (@ports) {
+        my ($port, $flags) = split(/\:/, $portlist);
+        my @flaglist = split(/\+/, $flags);
+        my ($useSSL, $useIPV6, $useIPV4);
+        
+        for (my $i = 0; $i < $#flaglist; $i++) {
+            if ($flaglist[$i] eq "SSL") {
+                $useSSL = 1;
+            } elsif ($flaglist[$i] eq "IPV4") {
+                $useIPV4 = 1;
+            } elsif ($flaglist[$i] eq "IPV6") {
+                $useIPV6 = 1;
+            }
+       }
+       
+       my $s4 = DarkIRCd::Sockets::IPv4->new();
+       my $s6 = DarkIRCd::Sockets::IPv6->new();
+       my $t;
+       
+       # create the socket
+       if ($useIPV4) {
+           $t = $s4->createServer($config->{Server}->{bindaddr}, $port);
+           $sel->add($t);
+       } elsif ($useIPV6) {
+           $t = $s6->createServer($config->{Server}->{bindaddr6}, $port);
+           $sel->add($t);
+       } elsif ($useIPV4 && $useSSL) {
+           $t = $s4->createServer($config->{Server}->{bindaddr}, $port, 1, $config->{Server}->{SSLCert}, $config->{Server}->{SSLKey});
+           $sel->add($t);
+       } elsif ($useIPV4 && $useSSL) {
+           $t = $s6->createServer($config->{Server}->{bindaddr6}, $port, 1, $config->{Server}->{SSLCert}, $config->{Server}->{SSLKey});
+           $sel->add($t);
+      }
+    }
     
     return bless($self, $class);
 }
