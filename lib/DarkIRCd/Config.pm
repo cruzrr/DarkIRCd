@@ -1,4 +1,4 @@
-package DarkIRCd::Sockets::IPv4;
+package DarkIRCd::Config;
 
 # This module provides an interface to deal with clients who are using
 # IPv4.
@@ -22,45 +22,33 @@ package DarkIRCd::Sockets::IPv4;
 
 use strict;
 use warnings;
-use IO::Socket::INET;
-use IO::Socket::SSL;
-use IO::Select;
-
-our $server;
 
 sub new {
-	my ($class) = @_;
-	my $self    = { };
-	
-	return bless($self, $class);
+    my ($class) = @_;
+    my $self    = { };
+    
+    return bless($self, $class);
 }
 
-sub createServer {
-	my ($class, $certfile, $keyfile, $addr, $port, $useSSL) = @_;
-	
-	if ($useSSL == 1) {
-		$server = IO::Socket::SSL->new(
-			SSL_server      => 1,
-			SSL_cert_file   => $certfile,
-			SSL_key_file    => $keyfile,
-			LocalPort       => $port,
-			LocalAddr       => $addr || 'localhost',
-			Proto           => 'tcp',
-			ReuseAddr       => 1,
-			Type            => Socket::SOCK_STREAM
-		);
-	} else {
-		$server = IO::Socket::INET->new(
-			LocalPort       => $port,
-			LoacalAddr      => $addr || 'localhost',
-			Proto           => 'tcp',
-			ReuseAddr       => 1,
-			Type            => Socket::SOCK_STREAM
-		);
-	}
-	
-	return $server;
+sub parseConfig {
+    my ($class, $configFile) = @_;
+    
+    my $fh, $section, %config;
+    open($fh, "<$configFile") or die("Couldn't open config: $!\n");
+    while (<$fh>) {
+        if (/\#(.*)/) {
+            next;
+        } elsif (/\s*\[\s*(.*)\s*\]\s*/) {
+            $section = $1;
+            next;
+        } elsif (/\s*(\w+)\s*\=\s*(.*)\s*/) {
+            $config{$section}->{$1} = $2;
+            next;
+        }
+   }
+   
+   close($fh);
+   return \%config;
 }
-		
 
 1;
