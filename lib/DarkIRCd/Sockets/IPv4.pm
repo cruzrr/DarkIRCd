@@ -36,7 +36,7 @@ sub new {
 }
 
 sub createServer {
-	my ($class, %config, $certfile, $keyfile, $addr, $port) = @_;
+	my ($class, $certfile, $keyfile, $addr, $port) = @_;
 	
 	if ($config->{Server}->{SSL} == 1) {
 		$server = IO::Socket::SSL->new(
