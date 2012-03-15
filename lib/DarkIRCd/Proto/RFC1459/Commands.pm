@@ -1,7 +1,7 @@
-package DarkIRCd::IRC::Modes;
+package DarkIRCd::Proto::RFC1459::Commands;
 
-# This module contains information for IRC channel and user modes.
-#
+# This module contains RFC1459 commands that are protocol specific.
+# Normal IRC commands such as NICK and USER can be found in IRC/
 #
 #
 # Copyright (C) 2012 cruzrr

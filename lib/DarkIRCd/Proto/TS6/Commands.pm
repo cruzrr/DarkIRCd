@@ -1,6 +1,6 @@
-package DarkIRCd::IRC::Modes;
+package DarkIRCd::Proto::TS6::Commands;
 
-# This module contains information for IRC channel and user modes.
+# This module contains TS6 specific commands.
 #
 #
 #
