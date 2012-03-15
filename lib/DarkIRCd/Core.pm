@@ -24,7 +24,7 @@ use strict;
 use warnings;
 use DarkIRCd::Config;
 
-our ($sel, $config, %outbuffer, %inbuffer);
+our ($sel, $config, %outbuffer, %inbuffer, $starttime, @pings, $checktime, $lastout);
 
 sub new {
     my ($class, $configFile) = @_;
@@ -75,6 +75,84 @@ sub new {
 
 
 sub start {
-    
+    $starttime      = time;
+    $checktime      = time;
+    $lastout        = 0;
+    main_loop();
+}
+
+
+sub main_loop() {
+    while(1) {
+        foreach my $fh ($sel->can_read(1)) {
+            my ($tmp, $char);
+            $tmp = sysread($fh, $char, 1024);
+            close $fh unless defined $tmp and length $char;
+            $inbuffer{$fh} .= $char;
+            
+            while (my ($theline, $therest) = $inbuffer{$fh} =~ /([^\n]*)\n(.*)/s) {
+                $inbuffer{$fh} .= $therest;
+                $theline =~ s/\r$//;
+                server_in($theline, $fh);
+            }
+        }
+        
+        my $count = 0;
+        my $time  = time;
+        
+        for my $num (0 .. 3) {
+            last if ($lastout >= $time);
+            while($_ = shift(@{$queue[$num]})) {
+                if (length($_) > 512) {
+                    $_ = substr($_, 0, 511);
+                }
+            }
+            
+            fh_distribute($_);
+            
+            if (length($_) > 400) {
+                $lastout = $time + 5;
+                $count++;
+                last;
+           }
+           $count++;
+           
+           if ($lastout < $time - 20) {
+                $lastout = $time - 20;
+                last;
+           }
+           elsif ($lastout < $time - 15) {
+					$lastout = $time - 15;
+					next;
+				}
+				elsif ($lastout < $time - 10) {
+					$lastout = $time - 10;
+					next;
+				} else {
+					$lastout = $time + 1;
+				}
+				last if $count >= 1;
+			}
+			last if $count >= 1;
+		}
+		
+		foreach my $fh ($sel->can_write(0)) {
+			flush_out($fh);
+		}
+		
+		if ($ircping + 60 < $time && $checktime + 30 < $time) {
+			$checktime = $time;
+			process_pongs();
+	    }
+		
+		for (@timeout) {
+			if (defined($_->{'time'}) && $time >= $_->{'time'}) {
+				delete($_->{'time'});
+				my ($module, $sub) = ($_->{module}, $_->{'sub'});
+				eval("${$module}::$sub();");
+			}
+		}
+	}
+}
 
 1;
