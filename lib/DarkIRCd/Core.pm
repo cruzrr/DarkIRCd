@@ -24,7 +24,7 @@ use strict;
 use warnings;
 use DarkIRCd::Config;
 
-our ($sel, $config);
+our ($sel, $config, %outbuffer, %inbuffer);
 
 sub new {
     my ($class, $configFile) = @_;
@@ -72,5 +72,9 @@ sub new {
     
     return bless($self, $class);
 }
+
+
+sub start {
+    
 
 1;

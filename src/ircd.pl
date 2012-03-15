@@ -8,6 +8,8 @@
 use strict;
 use warnings;
 use lib '../lib';
-use DarkIRCd::Server;
+use DarkIRCd::Core;
 
-# erm, well... nothing to do yet. :P
+my $ircd = DarkIRCd::Core->new('../conf/DarkIRCd.conf');
+
+$ircd->start(); # this will NEVER return.
