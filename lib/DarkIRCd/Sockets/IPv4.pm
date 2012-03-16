@@ -34,6 +34,28 @@ sub new {
 	return bless($self, $class);
 }
 
+sub createClient {
+        my ($class, $addr, $port, $useSSL) = @_;
+
+        my $client;
+        if ($useSSL == 1) {
+                $client = IO::Socket::SSL->new(
+                        PeerPort        => $port,
+                        PeerAddr        => $addr,
+                        Proto           => 'tcp',
+                        Type            => Socket::SOCK_STREAM
+                ) or return;
+        } else {
+               $client = IO::Socket::INET->new(
+                        PeerPort        => $port,
+                        PeerAddr        => $addr,
+                        Proto           => 'tcp',
+                        Type            => Socket::SOCK_STREAM
+               ) or return;
+       }
+       return $client;
+}
+
 sub createServer {
 	my ($class, $addr, $port, $useSSL, $certfile, $keyfile) = @_;
 	
@@ -47,7 +69,7 @@ sub createServer {
 			Proto           => 'tcp',
 			ReuseAddr       => 1,
 			Type            => Socket::SOCK_STREAM
-		);
+		) or return;
 	} else {
 		$server = IO::Socket::INET->new(
 			LocalPort       => $port,
@@ -55,7 +77,7 @@ sub createServer {
 			Proto           => 'tcp',
 			ReuseAddr       => 1,
 			Type            => Socket::SOCK_STREAM
-		);
+		) or return;
 	}
 	
 	return $server;
