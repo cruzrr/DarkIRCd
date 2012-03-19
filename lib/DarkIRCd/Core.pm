@@ -82,6 +82,10 @@ sub start {
 }
 
 
+# this was taken from an IRC bot I wrote a year or so back
+# it might be easier to just write a new mainloop than try
+# to port this one... -ablakely
+
 sub main_loop() {
     while(1) {
         foreach my $fh ($sel->can_read(1)) {
